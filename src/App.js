@@ -109,7 +109,7 @@ function App() {
                   )}
                 </div>
                 <div className="">
-                  <p className='text-base font-medium text-Rose-400'>{item.category}</p>
+                  <p className='text-base font-medium text-Rose-500'>{item.category}</p>
                   <h2 className='text-lg font-semibold'>{item.name}</h2>
                   <h3 className='text-xl font-semibold text-Red'>$ {(item.price).toFixed(2)}</h3>
                 </div>
