@@ -46,7 +46,7 @@ function App() {
       {modal && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-black bg-opacity-75">
           <div className="bg-white p-8 sm:rounded-t-lg  rounded-lg sm:w-128 max-w-full flex flex-col gap-4 fixed bottom-0 left-0 right-0 sm:static">
-            <img className='size-16' src="\assets\images\icon-order-confirmed.svg" alt=""/>
+            <img className='size-16' src="\assets\images\icon-order-confirmed.svg" loading="lazy" alt=""/>
             <h2 className="text-4xl font-bold">Order Confirmed</h2>
             <p className='font-semibold text-Rose-500'>We hope you enjoy your food!</p>
             <div className="bg-Rose-50 p-4 rounded-md">
@@ -81,8 +81,8 @@ function App() {
           <h1 className="text-5xl font-bold">Desserts</h1>
           <div className="items pt-12">
             {items.map((item, index) => (
-              <div className='grid gap-8' key={index}>
-                <div className='relative'>
+              <div key={index}>
+                <div className='mb-8 relative'>
                   <img
                     className={`${item.quantity > 0 ? "ring-2 ring-Red" : ""} size-full object-cover rounded-lg`}
                     src={`${item.image.desktop}`}
