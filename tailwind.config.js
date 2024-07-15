@@ -16,6 +16,9 @@ module.exports = {
         "Rose-900": "hsl(14, 65%, 9%)",
         'regal-blue': '#243c5a',
       },
+      spacing: {
+        '128': '32rem',
+      },
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300..700&display=swap');
 
 ::selection{
-  background-color: black;
+  background-color: hsl(14, 86%, 42%);
   color: white;
 }
 
@@ -123,11 +123,34 @@ display: grid;
 grid-template-columns: inherit;
 }
 
-
-
 .items{
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%,15rem),1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,14rem),1fr));
 }
+
+/* WebKit Browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(14, 86%, 42%); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 3px solid transparent; /* Padding around scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(14, 86%, 60%); /* Color when hovering over the scrollbar thumb */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: hsl(14, 86%, 42%) transparent; /* Thumb and track color */
+}
+
