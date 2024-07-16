@@ -129,6 +129,60 @@ grid-template-columns: inherit;
   grid-template-columns: repeat(auto-fit, minmax(min(100%,14rem),1fr));
 }
 
+.modal-bg{
+  animation-name: fade-in;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in-out;
+}
+.modal{
+  opacity: 0;
+  animation-name: up-down;
+  animation-delay: 0.25s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.items-card{
+  opacity: 0;
+  animation-name: slide-in;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes up-down{
+  from{
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(00%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in{
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(00%);
+    opacity: 1;
+  }
+}
+
+
 /* WebKit Browsers */
 ::-webkit-scrollbar {
   width: 12px; /* Width of the entire scrollbar */

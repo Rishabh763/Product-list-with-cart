@@ -44,8 +44,8 @@ function App() {
 
       {/* Confirmation Modal */}
       {modal && (
-        <div className="fixed inset-0 z-50 grid place-items-center bg-black bg-opacity-75">
-          <div className="bg-white p-8 sm:rounded-t-lg  rounded-lg sm:w-128 max-w-full flex flex-col gap-4 fixed bottom-0 left-0 right-0 sm:static">
+        <div className="modal-bg fixed inset-0 z-50 grid place-items-center bg-black bg-opacity-75">
+          <div className="modal bg-white p-8 sm:rounded-t-lg  rounded-lg sm:w-128 max-w-full flex flex-col gap-4 fixed bottom-0 left-0 right-0 sm:static">
             <img className='size-16' src="\assets\images\icon-order-confirmed.svg" loading="lazy" alt=""/>
             <h2 className="text-4xl font-bold">Order Confirmed</h2>
             <p className='font-semibold text-Rose-500'>We hope you enjoy your food!</p>
@@ -117,7 +117,7 @@ function App() {
             ))}
           </div>
         </div>
-        <div className='sticky top-16 bg-white cart w-96 max-w-full rounded-xl p-6 flex flex-col gap-4 items-center'>
+        <div className='sticky top-16 bg-white cart w-96 max-w-full rounded-xl p-6 flex flex-col gap-4  items-center'>
           <h2 className='text-3xl font-bold text-Red w-full text-left'>Your Cart ({items.filter(item => item.quantity > 0).length})</h2>
           {items.filter(item => item.quantity > 0).length === 0 ? (
             <>
@@ -126,9 +126,9 @@ function App() {
             </>
           ) : (
             <ul className='w-full'>
-              <div className='max-h-60 overflow-y-auto'>
+              <div className='max-h-80 overflow-y-auto overflow-x-clip'>
                 {items.filter(item => item.quantity > 0).map((item, index) => (
-                  <li key={index} className='w-full border-b-[1px] border-Rose-300 py-2 pr-2 flex gap-2 justify-between items-center'>
+                  <li key={index} className='items-card w-full border-b-[1px] border-Rose-300 py-2 pr-2 flex gap-2 justify-between items-center'>
                     <div className="">
                       <h2 className='text-base font-semibold text-Rose-900'>{item.name}</h2>
                       <div>
