@@ -83,11 +83,20 @@ function App() {
             {items.map((item, index) => (
               <div key={index}>
                 <div className='mb-8 relative'>
-                  <img
-                    className={`${item.quantity > 0 ? "ring-2 ring-Red" : ""} size-full object-cover rounded-lg`}
-                    src={`${item.image.desktop}`}
-                    alt={`${item.name}-image`}
-                  />
+                  <picture className={`${item.quantity > 0 ? "ring-2 ring-Red" : ""} size-full object-cover rounded-lg`}>
+                      <source 
+                      media='(min-width: 1200px)'
+                      srcSet={`${item.image.desktop}`}
+                      />
+                      <source 
+                      media='(min-width: 768px)'
+                      srcSet={`${item.image.tablet}`}
+                      />
+                      <img
+                        src={`${item.image.mobile}`}
+                        alt={`${item.name}-image`}
+                      />
+                  </picture>
                   {item.quantity === 0 ? (
                     <div
                       className='bg-white absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 px-6 py-2 rounded-full ring-2 ring-Rose-300 hover:ring-Red transition-colors hover:text-Red flex gap-2 font-semibold cursor-pointer w-max'
