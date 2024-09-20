@@ -87,14 +87,17 @@ function App() {
                       <source 
                       media='(min-width: 1200px)'
                       srcSet={`${item.image.desktop}`}
+                      className='size-full object-cover rounded-lg'
                       />
                       <source 
                       media='(min-width: 768px)'
                       srcSet={`${item.image.tablet}`}
+                      className='size-full object-cover rounded-lg'
                       />
                       <img
                         src={`${item.image.mobile}`}
                         alt={`${item.name}-image`}
+                        className='size-full object-cover rounded-lg'
                       />
                   </picture>
                   {item.quantity === 0 ? (
